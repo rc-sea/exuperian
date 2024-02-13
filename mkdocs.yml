@@ -1,0 +1,95 @@
+site_name: Exupérian
+site_url: https://exuperian.com
+theme: 
+  name: material
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tooltips
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - header.autohide
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: indigo
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      primary: indigo
+      accent: light-blue
+
+plugins: 
+  - blog:
+      blog_dir: blog
+      authors_profiles: true
+  - search
+  - tags
+  - privacy
+  - social
+  - meta
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Glossary: glossary.md
+  - Blog: 
+    - blog/index.md
+  
+markdown_extensions:
+  - toc:
+      permalink: 
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - footnotes
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      linenums: true
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.details
+  - abbr
+  - tables
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md  
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/rc-sea"  target="_blank" rel="noopener">RC Carter</a>
