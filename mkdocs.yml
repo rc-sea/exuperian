@@ -33,7 +33,8 @@ theme:
       accent: light-blue
 
 plugins: 
-  - meta
+  - meta:
+      enabled: true
   - blog:
       blog_dir: blog
       authors_profiles: true
