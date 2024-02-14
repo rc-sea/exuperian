@@ -37,10 +37,13 @@ plugins:
   - blog:
       blog_dir: blog
       authors_profiles: true
+      blog_toc: true
   - search
   - tags
   - privacy
   - social
+
+
 nav:
   - Home: index.md
   - About: about.md
