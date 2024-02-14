@@ -12,7 +12,7 @@ authors:
 
 ## Overview
 
-Voting in the U.S. in a singular endeavor. All democracies conduct elections in some fashion, but few if any face the complexity of implementation that American election administrators do. No other enterprise in the US is remotely similar.  
+Voting in the U.S. in a singular endeavor. All democracies conduct elections in some fashion, but few if any face the complexity of implementation that American election administrators do. No other enterprise in the US is remotely similar.  Is this thing on?
 
 While the public typically thinks elections happen only every few years, in fact they occur continually in different formats. Elections are fixed events that impose unique operational burdens on hiring and preparedness [^1]. US elections are incredibly complex, spanning a variety of voting methods, districts, contest options, tally methods, and governing regulations as well as operational procedures and operating environments [^2]. Election administrators face asymmetric threats from geopolitical actors [^3] and heightened polarization [^4], scrutiny [^5] and threat environments [^6] within their districts. They perform elections with limited budgets [^7], a universal service obligation [^8] and a public that expects accurate results immediately upon completion [^9].
 
