@@ -179,7 +179,7 @@ Similarly, rather than try to explain the technology behind a challenge ballot w
 
 ### ElectionGuard and e2e as a Means to Increase Access for all Voters
 
-The ElectionGuard adoption effort to date has focused on using ElectionGuard with paper-based voting methods. Its first election in Fulton, Wisconsin, used a system built with VotingWorks that included a ballot-marking device, smart card, and printer to print a paper ballot and its associated confirmation code. Subsequent elections in Preston, Idaho, and College Park, Maryland, used Hart InterCivic's Verity Scan system, a precinct scanner that prints the confirmation code when a ballot is inserted.
+The ElectionGuard adoption effort has to date focused on using ElectionGuard with paper-based voting methods. Its first election in Fulton, Wisconsin, used a system built with VotingWorks that included a ballot-marking device, smart card, and printer to print a paper ballot and its associated confirmation code. Subsequent elections in Preston, Idaho, and College Park, Maryland, used Hart InterCivic's Verity Scan system, a precinct scanner that prints the confirmation code when a ballot is inserted.
 
 But ElectionGuard is not limited to paper-based voting methods. It is used by Enhanced Voting as part of their electronic ballot return capability.
 
