@@ -33,7 +33,6 @@ theme:
       accent: light-blue
 
 plugins: 
-  - meta
   - blog:
       blog_dir: blog
       authors_profiles: true
@@ -42,7 +41,7 @@ plugins:
   - tags
   - privacy
   - social
-
+  - meta
 
 nav:
   - Home: index.md
