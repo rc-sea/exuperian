@@ -43,6 +43,7 @@ plugins:
   - social
   - meta
   - typeset
+  - info
 
 nav:
   - Home: index.md
