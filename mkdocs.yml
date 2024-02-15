@@ -42,6 +42,7 @@ plugins:
   - tags
   - social
   - meta
+  - typeset
 
 nav:
   - Home: index.md
