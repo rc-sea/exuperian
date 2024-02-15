@@ -37,9 +37,9 @@ plugins:
       blog_dir: blog
       authors_profiles: true
       blog_toc: true
+      enabled: true
   - search
   - tags
-  - privacy
   - social
   - meta
 
