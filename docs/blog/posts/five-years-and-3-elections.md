@@ -1,5 +1,5 @@
 ---
-draft: false 
+ 
 date: 2024-01-19
 categories:
   - electionguard
