@@ -12,9 +12,7 @@ authors:
 
 ## Overview
 
-Voting in the U.S. in a singular endeavor. All democracies conduct elections in some fashion, but few if any face the complexity of implementation that American election administrators do. No other enterprise in the US is remotely similar.  Is this thing on?
-
-While the public typically thinks elections happen only every few years, in fact they occur continually in different formats. Elections are fixed events that impose unique operational burdens on hiring and preparedness [^1]. US elections are incredibly complex, spanning a variety of voting methods, districts, contest options, tally methods, and governing regulations as well as operational procedures and operating environments [^2]. Election administrators face asymmetric threats from geopolitical actors [^3] and heightened polarization [^4], scrutiny [^5] and threat environments [^6] within their districts. They perform elections with limited budgets [^7], a universal service obligation [^8] and a public that expects accurate results immediately upon completion [^9].
+Voting in the U.S. in a singular endeavor. All democracies conduct elections in some fashion, but few if any face the complexity of implementation that American election administrators do. While the public conception of elections is of events that happen only every few years, in fact they occur continually in different formats. Elections are also fixed events that follow prescriptive deadlines to allow all voters to participate, and impose unique operational burdens on hiring and preparedness [^1]. US elections in particular are incredibly complex, spanning a variety of voting methods, districts, contest options, tally methods, and governing regulations as well as operational procedures and operating environments [^2]. Election administrators face asymmetric threats from geopolitical actors [^3] and heightened polarization [^4], scrutiny [^5] and threat environments [^6] domestically and within their districts. They perform elections with limited budgets [^7], a universal service obligation [^8] and a public that expects accurate results immediately upon completion [^9].
 
 There is no perfect voting method that accommodates all voters and satisfies the unique security requirements of elections, either. Each method imposes tradeoffs and costs.
 
@@ -22,20 +20,9 @@ On top of it all sits how election administrators measure success: confidence an
 
 [ElectionGuard](https://www.electionguard.vote) is an open-source software development kit that enables voting system vendors and election administrations to implement ***end-to-end verifiable elections*** [^10] (e2e). Its intent is to **increase the confidence and participation of voters** in elections and election outcomes.
 
-??? info "What is an end to end verifiable election?"
-     An end-to-end verifiable election, among other things [^10], generates a public election record that provides all the information necessary for voters and third parties to review an entire election, including the following:
+Deploying software into the US election system is challenging, mostly for good or at least understandable reasons. Administering elections is complex, which is often surprising to people given the simplicity of their mental model of voting. Elections also present a lot of cognitive dissonance by virtue of some of their key constraints and design principles. When the success criteria is increasing confidence and participation, the challenge is even greater given the complex nature of determining what constitutes improvement.
 
-    * each and every the ballot included in the election is properly formed
-    * all the contest options on those ballots include only valid selected (1) or unselected (0) items
-    * all of the contest options selected are within each contest's limits (e.g., no more than 3 candidates selected for a 3-seat contest)
-    * and, finally, that all of the tallies generated from the ballots are correctly decrypted and aggregated (tallied)
-
-    The only thing not viewable in the record are the ***contents*** of the encrypted ballots themselves. All ballots are included in the record in their encrypted form, and the encryption is such that only the information above is derivable and verifiable via the appropriate [zero-knowledge proofs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof).
-
-
-Deploying software into the US election system is challenging, mostly for good or at least understandable reasons. Administering elections itself is already complex, which is often surprising to people given the simplicity of their mental model of voting. Elections also present a lot of cognitive dissonance to voters  by virtue of some of their key constraints and design principles. When the success criteria is measured as increasing confidence and participation, the challenge is even greater given the complex nature of determining what constitutes improvement.
-
-This article outlines the considerations involved in trying to deploy a confidence- and participation-building technology into the US election system, including how to measure and determine success. The conclusions and recommendations outline the challenges and opportunities for ElectionGuard and voting as the "industry" transitions to a new era of regulation.
+This article outlines the considerations involved in trying to deploy a confidence- and participation-building technology into the US election system, including how to measure and determine success. The conclusions and recommendations outline the challenges and opportunities for ElectionGuard and voting in the US as it transitions to a new era of regulation.
 
 ## What Does it Mean to Increase Confidence in Elections?
 
@@ -51,7 +38,7 @@ Determining and attributing the motivating factors for what contributes to confi
     * [Preston, Idaho](https://www.electionguard.vote/Reports/E2EVerifiability/), November 2022
     * [College Park, Maryland](https://civicdesign.org/reports/electionguard-in-college-park-maryland/), November 2023
 
-For our most recent two elections, we endeavored to answer the question of confidence via exit polling and community surveys and as well as monitoring behavior around use of the confirmation code lookup website. Methods and conclusions are available for each election as outlined above. While any generalization is naive, we believe we increased confidence in the local electorate. There are many reasons that could have occurred, but given that most surveys show voter confidence *decreasing* and then rebuilding over time as new voting systems are introduced [reference needed], that we can show an increase in confidence even as we are also introducing new technology is a significant result.
+For our most recent two elections, we endeavored to answer the question of confidence via exit polling and community surveys and as well as monitoring behavior around use of the confirmation code lookup website. Methods and conclusions are available for each election. While any generalization is naive, we believe we increased confidence in the local electorate. There are many reasons that could have occurred, but given that most surveys show voter confidence *decreasing* and then rebuilding over time as new voting systems or procedures are introduced [^16], that we can show an increase in confidence even as we are also introducing new technology is a significant result.
 
 ## Participation is Multi-faceted
 
@@ -157,9 +144,19 @@ This is potentially a meaningful benefit. Vote by mail voters concerned about th
 
 ### Does ElectionGuard Make It All Better?
 
-In many respects, dealing with the the secret ballot and its impact on voter confidence is one of the key challenges ElectionGuard was designed to address. It encrypts ballots in such a way that we can verify many of the properties of the election and all its constituent ballots without revealing the specific votes cast by individual voters.
+In many respects, dealing with the secret ballot is one of the key challenges ElectionGuard was designed to address. It encrypts ballots in such a way that we can verify many of the properties of the election and all its constituent ballots without revealing the specific votes cast by individual voters.
 
-In addition, by virtue of the confirmation code and BallotCheck, ElectionGuard provides a means for voters to participate in the election process in ways that can exhibit either or both of Zero Trust and common shopping behaviors. By using the confirmation code to verify that their votes were properly recorded and included in the election is an affirmative step that helps with the overall security posture of ElectionGuard. A BallotCheck is a Zero Trust action. For vote by mail voters it would be worth studying whether the additional confirmation code information available for the lookup process increases confidence in the system as an auditing action. Secret ballot lemonade, if you will; tart and sweet.
+In addition, by virtue of the confirmation code and BallotCheck, ElectionGuard provides a means for voters to participate in the election process in ways that can exhibit either or both of Zero Trust and common shopping behaviors. By using the confirmation code to verify that their votes were properly recorded and included in the election is an affirmative step that helps with the overall security posture of ElectionGuard. A BallotCheck is a Zero Trust action. For vote by mail voters it would be worth studying whether the additional confirmation code information available for the lookup process increases confidence in the system as an auditing action.
+
+??? info "What is in the election record of an end to end verifiable election?"
+    An end-to-end verifiable election, among other things [^10], generates a public election record that provides all the information necessary for voters and third parties to review an entire election, including the following:
+
+    * each and every ballot included in the election is properly formed
+    * all the contest options on those ballots include only valid selected (1) or unselected (0) items
+    * all of the contest options selected are within each contest's limits (e.g., no more than 3 candidates selected for a 3-seat contest)
+    * and, finally, that all of the results generated from the ballots are correctly decrypted and aggregated (tallied)
+
+    All ballots are included in the record in their encrypted form, and the encryption is such that only the information above is derivable and verifiable via the appropriate [zero-knowledge proofs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof). The only thing not viewable in the record are the ***contents*** of the encrypted ballots themselves.
 
 Taken together, a verifiable election record can provide all the details necessary to review an election except the contents of the encrypted ballots themselves. The confidence question at its core is whether the ElectionGuard "infrastructure", voter actions, and third-party oversight compensates for the lack of emotional surety of verifying the ballot itself.
 
@@ -215,30 +212,33 @@ The mechanism that enables ElectionGuard to provide a certification pathway for 
 ## Acknowledgements
 
 [^1]:
-    dynamic (covid, lightning strikes)
+    Working in a polling place during an election makes for a long day. Polling places are often open for more than 12 hours a day for multiple days. On election day after the polls close, precinct-level tallying and reporting must be completed, and then the ballots and other election materials must be transported to the central election office. Early voting can encompass multiple days over weekends and weekdays, and there is often multiple sessions of training for different tasks. Finding workers who can devote that level of commitment on a temporary basis is challenging. COVID placed a huge new focus on voter and poll-worker safety for in-person voting as well as forced aggressive adoption of vote by mail.
 
 [^2]:
+    In the US, voters often vote on multiple contests with overlapping jurisdictions and different voting methods. For example, a voter might vote for US President (where you vote for the President and Vice President *ticket*), multiple congresspeople, a state senator, a county commissioner, and multiple school board members and referenda, all in the same election, with different voters facing different slates of candidates. Each of these contests might have different rules for how the voter can vote, and different rules for how the votes are tallied. Party primaries and special elections operate under their own special considerations and conventions.  Ranked-choice voting is also becoming more common, and it has different rules for how votes are tallied as well as presents its own user experience challenges.
+
+    Beyond the elections themselves, the service obligation to provide voting facilities to remote voters and the fixed calendar dates mean election administrators deal with natural disasters, power outages, and other emergencies that can disrupt the voting process. The 2020 election was conducted during the COVID-19 pandemic, which forced many jurisdictions to adopt new voting methods and procedures to accommodate voters who were unable to vote in person and protect poll workers. Absentee voters, especially military and overseas voters, have their own unique set of rules and procedures that must be followed and force early deadlines for ballot production and distribution.
 
 [^3]:
-    Russia, China, Iran
+    When the ElectionGuard program was first announced in 2019 the security focus on elections was the external threat of international actors attempting to alter the results or sow doubt about the integrity of the elections via remote infiltration of online systems (see for example: [The real security threat to the 2018 midterm elections is low voter confidence](https://www.brookings.edu/articles/the-real-security-threat-to-the-2018-midterm-elections-is-low-voter-confidence/)). Those threats continue today, and in accelerated fashion with new technologies as well as a more established hacking and ransomware infrastructure.
 
 [^4]:
     polarization
 
 [^5]:
-    scrutiny
+    Many election administrations face intense (and unwarranted) scrutiny from local activist organizations. Tarrant County, Texas, home to Fort Worth and one of the largest election jurisdictions in the US, faced over 1,000 Freedom of Information Act requests on the provenance of ballots and election procedures as questions were raised about the conduct of elections in 2020. See [Tarrant County conservatives push questions about Texas election integrity](https://www.texastribune.org/2022/08/04/texas-election-integrity-tarrant/)
 
 [^6]:
-    threat environment
+    The [Committee for Safe and Secure Elections](https://safeelections.org/) was founded to "support policies and practices that protect election workers and voters from violence, threats, and intimidation". The need for such an organization did not exist until recently. This [page on the Election Assistance Commission website](https://www.eac.gov/election-officials/election-official-security) outlines federal support of this growing problem.
 
 [^7]:
-    limited budgets
+    In [The Cost of Conducting Elections](https://electionlab.mit.edu/sites/default/files/2022-05/TheCostofConductingElections-2022.pdf) Charles Stewart estimates that local governments spend on elections on an annual basis "roughly what [they] spend managing public parking facilities". Overall the spending on elections is on the order of $8 to $10 per voter per year. While it's difficult to gauge how much exactly is being spent on elections, almost everyone agrees *it's not enough*.
 
 [^8]:
-    universal service obligation
+    The [Help America Vote Act](https://www.eac.gov/sites/default/files/eac_assets/1/6/HAVA41.PDF), passed in the wake of the 2000 elections, in addition to eliminating punch-card and lever-based voting machines, established the Election Assistance Commission to create new voting system standards and certification processes. It is also quite opinionated on aspects of the systems to be developed. The regulations explicitly call for at least one "accessible" system be available per polling location to meet the needs of "individuals with disabilities, including the blind and visually impaired, and voters with limited proficiency in the English language". Grants were established and ultimately paid out to help partially fund voting systems that could be used by the disabled community, but also the overseas and military communities. All of these communities are expected to be supported by federal legislation, however the funding is not sufficient to cover the costs of the systems. The overseas and military consituencies also impose very strict advance notification schedules to accommodate the extended delivery times of the paper-based voting technologies involved.
 
 [^9]:
-    immediate results
+    Thirty-nine state have most of all of their election results published on election night. See [Five Thirty-Eight's "When To Expect Election Results In Every State"](https://projects.fivethirtyeight.com/election-results-timing/#) report on the 2020 election reporting times.
 
 [^10]:
     The simplest way to think of ElectionGuard is as a technology similar to paper that records and encrypts ballots and elections in such a way that voters and independent observers can verify
