@@ -170,9 +170,11 @@ However, voters of all types may want to understand why ElectionGuard might matt
 
 To that end, prior to our election in Preston in 2022, we did some user research on terms to use that were  accurate and understandable but also established a sentiment in the voter reflective of the benefit of the effort. For example, we ended up using the term "independently verify" elections rather than have them "end-to-end verifiable"; the "independence" angle give the voter the proper feeling of agency while accurately reflecting the core capability of the system (creating an independent, encrypted copy of the election and all its ballots). Instead of security and prevention of malfeasance, we emphasized transparency and independent validation.
 
-Similarly, rather than try to explain the technology behind a challenge ballot with its label, we branded it with the quasi-marketing term BallotCheck, indicating an innovation without specifying its nature. The intent was not to hide information, but enable layers of inquiry appropriate to a voter's interest. It is just as important not to overwhelm and overcomplicate the voter's conception of the ElectionGuard "feature", either.
+Similarly, rather than try to explain the technology behind a challenge ballot with its label, we branded it with the quasi-marketing term BallotCheck, indicating an innovation without specifying its nature. The intent was not to hide information, but enable layers of inquiry (bite --> snack --> meal) appropriate to a voter's interest. It is just as important not to overwhelm and overcomplicate the voter's conception of the ElectionGuard "feature", either. The fact that it blended into the background and wasn't seen as a separate "thing" was a feature, not a bug.
 
 ## Future Potential
+
+ElectionGuard has been successful to date in establishing itself with multiple elections and voting systems. with its precinct scan partnership with Hart and in commercial use with Enhanced Voting, it is a long way from full adoption and its full potential. 
 
 ### ElectionGuard and e2e as a Means to Increase Access for all Voters
 
@@ -199,15 +201,7 @@ The mechanism that enables ElectionGuard to provide a certification pathway for 
 
 ## Conclusions and Recommendations
 
-* Sporadic, event-based operation with fixed, regulatory-driven deadlines
-* Offline operational bias
-* Fragmented regulatory and operational practice
-* Low error tolerance
-* Advocacy bias toward paper-based, manual voting methods
-* Small, litigious industry with largely zero-sum market potential
-* Static, manual software deployments to custom embedded hardware
-* Limited opportunities for new software deployments; high cost of switching
-* Uncertain certification process
+ElectionGuard foo
 
 ## Acknowledgements
 

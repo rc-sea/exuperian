@@ -28,6 +28,7 @@ jobs:
             mkdocs-material-
       - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
       - run: pip install "mkdocs-material[imaging]"
+      - run: mkdocs serve
       - run: mkdocs build
       - run: mkdocs gh-deploy --force
 env:
