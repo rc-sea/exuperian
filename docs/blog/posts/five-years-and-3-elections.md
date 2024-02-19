@@ -226,7 +226,7 @@ The mechanism that enables ElectionGuard to provide a certification pathway for 
     polarization
 
 [^5]:
-    Many election administrations face intense (and unwarranted) scrutiny from local activist organizations. Tarrant County, Texas, home to Fort Worth and one of the largest election jurisdictions in the US, faced over 1,000 Freedom of Information Act requests on the provenance of ballots and election procedures as questions were raised about the conduct of elections in 2020. See [Tarrant County conservatives push questions about Texas election integrity](https://www.texastribune.org/2022/08/04/texas-election-integrity-tarrant/)
+    Many election administrations face intense (and unwarranted) scrutiny from local activist organizations. Tarrant County, Texas, home to Fort Worth and one of the largest election jurisdictions in the US, faced over 1,000 Freedom of Information Act  foo requests on the provenance of ballots and election procedures as questions were raised about the conduct of elections in 2020. See [Tarrant County conservatives push questions about Texas election integrity](https://www.texastribune.org/2022/08/04/texas-election-integrity-tarrant/)
 
 [^6]:
     The [Committee for Safe and Secure Elections](https://safeelections.org/) was founded to "support policies and practices that protect election workers and voters from violence, threats, and intimidation". The need for such an organization did not exist until recently. This [page on the Election Assistance Commission website](https://www.eac.gov/election-officials/election-official-security) outlines federal support of this growing problem.
