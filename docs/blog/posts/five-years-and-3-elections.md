@@ -78,7 +78,7 @@ That reason discussions of security backfire is because to call attention to the
 
 When organizations embrace a [Zero Trust](https://en.wikipedia.org/wiki/Zero_trust_security_model) philosophy, for example, employees are trained to see the practices they follow (multi-factor authentication, phishing prevention, data retention, etc.) as providing the security; following good security practice reinforces the security message.
 
-There isn't an equivalent individual experience or "practice" for voters to adopt to improve the security of the voting system they use, however [^20]. So while ElectionGuard adheres to a Zero Trust model with its security practices [^21], and one could argue it is providing a Zero Trust capability for voting systems [^22], we did not focus on this capability in our public-facing communications [^23]. 
+There isn't an equivalent individual experience or "practice" for voters to adopt to improve the security of the voting system they use, however [^20]. So while ElectionGuard adheres to a Zero Trust model with its security practices [^21], and one could argue it is providing a Zero Trust capability for voting systems [^22], we did not focus on this capability in our public-facing communications [^23].
 
 Because voting is a complex enterprise, there are many opportunities for confidence to be eroded as the system is revealed. Even if the voter believes the election administrator competent and doing their best, and the job being well done, the simple fact of the complexity, the realization of the size of the "attack surface" of an election, can reduce confidence in the system, especially since even ancillary activities such as registration waiting times have been shown to diminish confidence on their own [^24].  
 
@@ -100,7 +100,7 @@ However, that's a lot for a voter to process on top of handling new voting metho
 
 ### The Cognitive Dissonance of the Secret Ballot
 
-The secret ballot is a security practice designed to solve the problem of widespread fraud or vote manipulation. It was employed across the US after vote-buying scandals in the 1888 election.
+The secret ballot is designed to solve the problem of widespread fraud or vote manipulation. It was employed across the US after vote-buying scandals in the 1888 election.
 
 For the secret ballot to be observed, voters vote privately in a public polling place. Voters should be confident they are not being observed filling out the ballots, nor that the ballots are observed in the process of casting.
 
@@ -124,19 +124,19 @@ Complicating the efficacy of the secret ballot is the emergence of Vote by Mail 
 
 A mail-in voting ballot is not secret because the voter fills out the ballot away from the polling place and outside the observation of poll workers. Coercion is possible because voters can be required to take a photo of their ballot or otherwise show it to the coercing party. There's also the "local" coercion of whoever is in the room when the ballot is being filled out, including disabled voters with no ability to mark the ballot being dependent on someone else to do it for them; each can undermine the privacy promised by the secret ballot, since voters in any of these situations can feel compelled to change their vote to a more "socially acceptable" option that doesn't reflect their true preference [^29].
 
-Outside of the potential coercive effect, voters are less confident in mail-in ballots than in-person ballots because they are simply less confident their ballots will be counted at all. Other actors such as the postal service are necessary to transport the ballot to the election administrator, and there is simply concern about whether all steps of the process have been followed (and security preserved along the way) [^30].
+Outside of the potential coercive effect, voters are less confident in mail-in ballots than in-person ballots because they are less confident their ballots will be counted at all. Other actors such as the postal service are necessary to transport the ballot to the election administrator, and there is concern about whether all steps of the process have been followed (and security preserved along the way) [^30].
 
 ##### ElectionGuard Offers a Silver Lining
 
-Although ElectionGuard has not been deployed in a Vote by Mail election yet, the 2.0 Specification enables Vote by Mail support [^31]. It has the potential to *increase* confidence with Vote by Mail specifically, since voters will be able to not only verify that their ballot was included in the tally, as occurs with precinct scan, but also that it was recorded as they intended, while maintaining their privacy.
+Although ElectionGuard has not been deployed in a Vote by Mail election yet, the 2.0 Specification supports it [^31]. It has the potential to *increase* confidence with Vote by Mail specifically, since voters will be able to not only verify that their ballot was included in the tally, as occurs with precinct scan, but also that it was recorded as they intended while maintaining their privacy.
 
 In a precinct-scan election, the voter is present, so the encryption and the associated confirmation code can be generated dynamically directly from the voter's choices. The voting machine, since it's under the control of the election administrator, also contains information for generating the encrypted ballots, including the primary nonce, hashes, manifest, and election parameters.
 
-With Vote by Mail (or any central count election), the voter isn't present when the encryption takes place, so we need to give them the ability to generate their own confirmation code prior to submitting their ballot. This is done by using ElectionGuard's "Pre-Encrypted Ballots" capability [^32].
+With Vote by Mail (or any central count election), the voter isn't present when their ballot is encrypted. As such, we need to give them the ability to generate their own confirmation code prior to submitting their ballot. This is done using ElectionGuard's "Pre-Encrypted Ballots" capability [^32].
 
-With pre-encrypted ballots, instead of generating the confirmation code dynamically when the ballot is submitted into the scanner, the full set of choices the voter *could* make is generated in advance. A ballot hash, which is uniquely generated for each ballot as part of the pre-encryption process, is printed on each ballot directly as well as a set of short codes (e.g., "IA", "J4", etc.) for each contest option. (The short codes are uniquely generated for each ballot, so while the codes themselves may recur, they randomly apply to different contest options on other ballots and contests) [^33].
+With pre-encrypted ballots, instead of generating the confirmation code dynamically when the ballot is submitted into the scanner, the full set of choices and associated confirmation codes the voter *could* make is generated in advance. A ballot hash, which is uniquely generated for each ballot as part of the pre-encryption process, is printed on each ballot directly as well as a set of short codes (e.g., "IA", "J4", etc.) for each contest option. (The short codes are uniquely generated for each ballot, so while the codes themselves may recur, they randomly apply to different contest options on other ballots and contests) [^33].
 
-As the voter fills out their ballot, they accumulate the set of short codes associated with each of their choices. The entire set of selected short codes constitutes the remainder of the confirmation code printed on their ballot (ideally they have a separate copy of only the short codes for the voter to keep and check the result with) [^34].
+As the voter fills out their ballot, they accumulate the set of short codes associated with each of their choices. The entire set of selected short codes constitutes the remainder of the confirmation code printed on their ballot [^34].
 
 When the voter is done, they mail or drop off their ballot in a ballot box, retaining the base confirmation code and the set of the short codes they selected. When the election record is published and they go to confirm their ballot, in addition to the notification about whether the ballot was included in the election, they can also view the short codes they selected to see if their ballot was recorded as they intended.
 
@@ -146,10 +146,12 @@ This is potentially a meaningful benefit. Vote by mail voters concerned about th
 
 In many respects, dealing with the secret ballot is one of the key challenges ElectionGuard was designed to address. It encrypts ballots in such a way that we can verify many of the properties of the election and all its constituent ballots without revealing the specific votes cast by individual voters.
 
-In addition, by virtue of the confirmation code and BallotCheck, ElectionGuard provides a means for voters to participate in the election process in ways that can exhibit either or both of Zero Trust and common shopping behaviors. By using the confirmation code to verify that their votes were properly recorded and included in the election is an affirmative step that helps with the overall security posture of ElectionGuard. A BallotCheck is a Zero Trust action. For vote by mail voters it would be worth studying whether the additional confirmation code information available for the lookup process increases confidence in the system as an auditing action.
+In addition, by virtue of the confirmation code and BallotCheck, ElectionGuard provides a means for voters to participate in the election process in ways that exhibit Zero Trust. 
+
+For vote by mail voters it would be worth studying whether the additional confirmation code information available for the lookup process increases confidence in the system as an auditing action.
 
 ??? info "What is in the election record of an end to end verifiable election?"
-    An end-to-end verifiable election, among other things [^10], generates a public election record that provides all the information necessary for voters and third parties to review an entire election, including the following:
+    An end-to-end verifiable election, among other things, generates a public election record that provides all the information necessary for voters and third parties to review an entire election, including the following:
 
     * each and every ballot included in the election is properly formed
     * all the contest options on those ballots include only valid selected (1) or unselected (0) items
@@ -158,52 +160,57 @@ In addition, by virtue of the confirmation code and BallotCheck, ElectionGuard p
 
     All ballots are included in the record in their encrypted form, and the encryption is such that only the information above is derivable and verifiable via the appropriate [zero-knowledge proofs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof). The only thing not viewable in the record are the ***contents*** of the encrypted ballots themselves.
 
-Taken together, a verifiable election record can provide all the details necessary to review an election except the contents of the encrypted ballots themselves. The confidence question at its core is whether the ElectionGuard "infrastructure", voter actions, and third-party oversight compensates for the lack of emotional surety of verifying the ballot itself.
+An e2e public election record can provide all the details necessary to review an election except the contents of the encrypted ballots themselves. The question from a voter confidence perspective is whether this ElectionGuard "infrastructure", associated voter actions, and third-party oversight compensates for the lack of emotional surety of verifying the contents of the ballot itself.
 
 ### Tell Me You're Increasing Confidence Without Telling Me You're Increasing Confidence
 
 There's a startup or marketing adage that "it's easier to sell aspirin than vitamins". It's easier to succeed with a product when its value proposition is causally associated with an observable benefit (headache relief from aspirin) than the possibility of a diffuse benefit in the future (vitamins make you healthier). In the case of confidence and election integrity, or really almost anything involving security, it's easier to succeed if you don't say anything at all.
 
-Beyond security and Zero Trust, explaining what ElectionGuard is and how end-to-end verifiability works is also a challenge. The cryptography, security, core capability and mathematics of homomorphic encryption, as well as the interplay of the specification, code, and independent verifiers, is simply a lot to comprehend.
+Beyond security and Zero Trust, explaining what ElectionGuard is and how end-to-end verifiability works is a challenge. The cryptography, security, core capability and mathematics of homomorphic encryption, as well as the interplay of the specification, code, and independent verifiers, is simply a lot to comprehend.
 
-However, voters of all types may want to understand why ElectionGuard might matter to their elections or  why it's being used. Being able to handle the questions of all voters, from the least to the most technical, all without overwhelming voters with unnecessarily complex detail, was critical to understanding and, ultimately, validation and acceptance.
+However, voters of all types may want to understand why ElectionGuard might matter to their elections or  why it's being used. Being able to handle the questions of all voters, from the least to the most technical, all without overwhelming them with unnecessarily complex detail, was critical to understanding and, ultimately, validation and acceptance.
 
-To that end, prior to our election in Preston in 2022, we did some user research on terms to use that were  accurate and understandable but also established a sentiment in the voter reflective of the benefit of the effort. For example, we ended up using the term "independently verify" elections rather than have them "end-to-end verifiable"; the "independence" angle give the voter the proper feeling of agency while accurately reflecting the core capability of the system (creating an independent, encrypted copy of the election and all its ballots). Instead of security and prevention of malfeasance, we emphasized transparency and independent validation.
+To that end, prior to our election in Preston in 2022, we did some user research on terms to use that were accurate and understandable but also established a sentiment in the voter reflective of the benefit of the effort. We ended up using the term "independently verify" rather than "end-to-end verifiable"; "independence" gave voters the feeling of agency while accurately reflecting the core capability of the system (creating an independent, encrypted copy of the election and all its ballots). Instead of security and prevention of malfeasance, we emphasized transparency and independent validation of results to reassure voters.
 
-Similarly, rather than try to explain the technology behind a challenge ballot with its label, we branded it with the quasi-marketing term BallotCheck, indicating an innovation without specifying its nature. The intent was not to hide information, but enable layers of inquiry (bite --> snack --> meal) appropriate to a voter's interest. It is just as important not to overwhelm and overcomplicate the voter's conception of the ElectionGuard "feature", either. The fact that it blended into the background and wasn't seen as a separate "thing" was a feature, not a bug.
+Similarly, rather than try to explain the technology behind a challenge ballot with a proper label / call to action, we faux "branded" it with the term BallotCheck, indicating an innovation without specifying its nature. The intent was not to hide information, but enable layers of inquiry (bite --> snack --> meal) appropriate to a voter's interest. It is just as important not to overwhelm and overcomplicate the voter's conception of the ElectionGuard "feature", either. The fact that it blended into the background and wasn't seen as a separate "thing" was a feature, not a bug [^36].
 
-## Future Potential
+### The Importance of Independent Third-Party Verifiers
 
-ElectionGuard has been successful to date in establishing itself with multiple elections and voting systems. with its precinct scan partnership with Hart and in commercial use with Enhanced Voting, it is a long way from full adoption and its full potential. 
+The last two ElectionGuard elections had the benefit of an independent verifier developed by the MITRE Corporation to validate the election record, as well as a confirmation code lookup site hosted by Enhanced Voting.
 
-### ElectionGuard and e2e as a Means to Increase Access for all Voters
+MITRE took a true independent actor approach with their verifier. They provided an independent interpretation of each element of the election record directly attributable to the relevant specification version. Because College Park was not a fully "2.0" election, we were forced to document all the exceptions and deviations from the specification, and MITRE was able to provide an independent interpretation of those as well.
 
-The ElectionGuard adoption effort has to date focused on using ElectionGuard with paper-based voting methods. Its first election in Fulton, Wisconsin, used a system built with VotingWorks that included a ballot-marking device, smart card, and printer to print a paper ballot and its associated confirmation code. Subsequent elections in Preston, Idaho, and College Park, Maryland, used Hart InterCivic's Verity Scan system, a precinct scanner that prints the confirmation code when a ballot is inserted.
+Being able to successfully independently verify the election fully demonstrated the interdependence of all the elements of an e2e election: the specification, the production codebase performing the encryption and guardian ceremonies, the features enabled by the election and scanner-based voting method, and the election record generated by the admin device.
 
-But ElectionGuard is not limited to paper-based voting methods. It is used by Enhanced Voting as part of their electronic ballot return capability.
+While the immediate public coverage of the College Park and Preston elections may not have focused on the independent verification aspects of the election, it is nonetheless systemically important as a means to certify e2e systems and real-world elections on an ongoing basis.
 
-!!! tip "ElectionGuard's key differentiation relative to paper and any specific voting method is its  potential to span ***all*** voting methods."
-    If every voting method a jurisdiction uses incorporates ElectionGuard, the entire election can be independently verified while completely respecting voter privacy.
+In addition, as ElectionGuard is more fully adopted across election jurisdictions, the ability of independent verifiers to scale alongside has the potential to increase confidence across systems and voters.
 
-Enabling electronic voting systems is important because paper-based voting methods are not sufficient to serve many voting constituencies. And without a technology like ElectionGuard going forward, voting systems that are strictly electronic will have no ability to be certified for voters.
+## Conclusions and Recommendations
 
-### How Does ElectionGuard Enable New Voting Methods?
+ElectionGuard has successfully integrated with multiple voting systems, and has shown the potential to increase confidence locally in election outcomes. However, in many ways it is only at the beginning of what might obtain with it.
 
-The mechanism that enables ElectionGuard to provide a certification pathway for non-paper-based systems is a concept called ***software independence***.
+For example, it has only been deployed in small precinct-level elections using a single voting method or, as in the case of Enhanced Voting, as part of their Electronic Ballot Return capability.
+
+A further benefit of ElectionGuard and e2e occurs when it extends across multiple voting methods. Since some voting methods may not see much use, breaking out election results by method can undermine voting privacy.
+
+Fundamentally, and societally, though, it is critical to enable as many viable voting methods as we can. No one voting method is appropriate for all voters. Paper-based systems offer full software independence and auditability, but also present major barriers to truly independent voting for voters with limited sight, mobility, or language facility. Vote by mail is growing in popularity and certainly aids with convenience for absentee and early voting options.
+
+From strictly a usability perspective, electronic voting systems are often preferable to paper-based systems for the many accessibility affordances they enable. They are even explicitly called out in the original HAVA legislation as being preferable for disabled voters.
+
+However, the first generation of electronic voting systems (called Direct Response Electronic (DRE) systems) that came about after passage of HAVA have been found to be lacking from a security and audit capability, and have fallen into disfavor relative to paper systems. 
+
+ElectionGuard offers the ability for a new generation of electronic voting systems to emerge that offer the improved accessibility possible with electronic systems but now also with full ***software independence***.
 
 !!! info "What is Software Independence?"
     The formal definition of software independence is:
     > A voting system is software independent if an undetected change or error in its software cannot cause an undetectable change or error in an election outcome.
 
-    Practically speaking, software independence is the ability to independently verify an election and its outcome without reliance on the system that recorded the votes and generated the initial tally. Paper-based ballots are software independent because they can be recounted by hand or scanned by independent systems to verity the results obtained. ElectionGuard is software independent because it provides an independent, encrypted copy of the election and all its ballots that can be independently verified 
-
-### The Potential Benefit of Scale and Third-Party Oversight
-
-## Conclusions and Recommendations
-
-ElectionGuard foo
+    Practically speaking, software independence is the ability to independently verify an election and its outcome without reliance on the system that recorded the votes and generated the initial tally. Paper-based ballots are software independent because they can be recounted by hand or scanned by independent systems to verity the results obtained. ElectionGuard is software independent because it provides an independent, encrypted copy of the election and all its ballots that can be independently verified and tallied external to the recording system. 
 
 ## Acknowledgements
+
+coming soon 
 
 [^1]:
     Working in a polling place during an election makes for a long day. Polling places are often open for more than 12 hours a day for multiple days. On election day after the polls close, precinct-level tallying and reporting must be completed, and then the ballots and other election materials must be transported to the central election office. Early voting can encompass multiple days over weekends and weekdays, and there is often multiple sessions of training for different tasks. Finding workers who can devote that level of commitment on a temporary basis is challenging. COVID placed a huge new focus on voter and poll-worker safety for in-person voting as well as forced aggressive adoption of vote by mail.
@@ -229,10 +236,10 @@ ElectionGuard foo
     In [The Cost of Conducting Elections](https://electionlab.mit.edu/sites/default/files/2022-05/TheCostofConductingElections-2022.pdf) Charles Stewart estimates that local governments spend on elections on an annual basis "roughly what [they] spend managing public parking facilities". Overall the spending on elections is on the order of $8 to $10 per voter per year. While it's difficult to gauge how much exactly is being spent on elections, almost everyone agrees *it's not enough*.
 
 [^8]:
-    The [Help America Vote Act](https://www.eac.gov/sites/default/files/eac_assets/1/6/HAVA41.PDF), passed in the wake of the 2000 elections, in addition to eliminating punch-card and lever-based voting machines, established the Election Assistance Commission to create new voting system standards and certification processes. It is also quite opinionated on aspects of the systems to be developed. The regulations explicitly call for at least one "accessible" system be available per polling location to meet the needs of "individuals with disabilities, including the blind and visually impaired, and voters with limited proficiency in the English language". Grants were established and ultimately paid out to help partially fund voting systems that could be used by the disabled community, but also the overseas and military communities. All of these communities are expected to be supported by federal legislation, however the funding is not sufficient to cover the costs of the systems. The overseas and military consituencies also impose very strict advance notification schedules to accommodate the extended delivery times of the paper-based voting technologies involved.
+    The [Help America Vote Act](https://www.eac.gov/sites/default/files/eac_assets/1/6/HAVA41.PDF), passed in the wake of the 2000 elections, in addition to eliminating punch-card and lever-based voting machines, established the Election Assistance Commission to create new voting system standards and certification processes. It is also quite opinionated on aspects of the systems to be developed. The regulations explicitly call for at least one "accessible" system be available per polling location to meet the needs of "individuals with disabilities, including the blind and visually impaired, and voters with limited proficiency in the English language". Grants were established and ultimately paid out to help partially fund voting systems that could be used by the disabled community, but also the overseas and military communities. All of these communities are expected to be supported by federal legislation, however the funding is not sufficient to cover the costs of the systems. The overseas and military constituencies also impose very strict advance notification schedules to accommodate the extended delivery times of the paper-based voting technologies involved.
 
 [^9]:
-    Thirty-nine state have most of all of their election results published on election night. See [Five Thirty-Eight's "When To Expect Election Results In Every State"](https://projects.fivethirtyeight.com/election-results-timing/#) report on the 2020 election reporting times.
+    Thirty-nine state have most or all of their election results published on election night. See [Five Thirty-Eight's "When To Expect Election Results In Every State"](https://projects.fivethirtyeight.com/election-results-timing/#) report on the 2020 election reporting times.
 
 [^10]:
     The simplest way to think of ElectionGuard is as a technology similar to paper that records and encrypts ballots and elections in such a way that voters and independent observers can verify
@@ -247,7 +254,7 @@ ElectionGuard foo
     Adderson, Christopher, and LoTempio, Andrew. (2002) [Winning, Losing and Political Trust in America](https://doi.org/10.1017/S0007123402000133)
 
 [^14]:
-    Clark and Stewart, The Confidence Earthquake
+    Clark and Stewart, [The Confidence Earthquake](http://dx.doi.org/10.2139/ssrn.3825118)
 
 [^15]:
     Claudia Ziegler Acemyan, Philip Kortum, Michael D. Byrne, and Dan S. Wallach (2018) [Summative Usability Assessments of STAR-Vote: A Cryptographically Secure e2e Voting System That Has Been Empirically Proven to Be Easy to Use](https://journals.sagepub.com/doi/full/10.1177/0018720818812586)
@@ -289,7 +296,7 @@ ElectionGuard foo
     [Table 18: States With Mostly-Mail Elections](https://www.ncsl.org/elections-and-campaigns/table-18-states-with-all-mail-elections), from the National Council of State Legislatures report [Voting Outside the Polling Place: Absentee, All-Mail and Other Voting at Home Options](https://www.ncsl.org/elections-and-campaigns/voting-outside-the-polling-place)
 
 [^28]:
-    [The Confidence Earthquake](https://electionlab.mit.edu/sites/default/files/2021-07/clark-stewart_the_confidence_earthquake_final.pdf)
+    Clark and Stewart, [The Confidence Earthquake](https://electionlab.mit.edu/sites/default/files/2021-07/clark-stewart_the_confidence_earthquake_final.pdf)
 
 [^29]:
     Hall, Thad, (2009) [Electronic Elections in a Politicized Polity](https://vote.caltech.edu/working-papers/76)
@@ -308,3 +315,6 @@ ElectionGuard foo
 [^34]:
 
 [^35]:
+
+[^36]:
+    ElectionGuard blending into the background

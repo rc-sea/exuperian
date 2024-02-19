@@ -1,5 +1,7 @@
 node_modules/
 .DS_Store
+settings.json
+spellright.dict
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
