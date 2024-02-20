@@ -12,7 +12,7 @@ authors:
 
 ## Overview
 
-Voting in the U.S. in a singular endeavor. All democracies conduct elections in some fashion, but few if any face the complexity of implementation that American election administrators do. While the public conception of elections is of events that happen only every few years, in fact they occur continually in different formats. Elections are also fixed events that follow prescriptive deadlines to allow all voters to participate, and impose unique operational burdens on hiring and preparedness [^1]. US elections in particular are incredibly complex, spanning a variety of voting methods, districts, contest options, tally methods, and governing regulations as well as operational procedures and operating environments [^2]. Election administrators face asymmetric threats from geopolitical actors [^3] and heightened polarization [^4], scrutiny [^5] and threat environments [^6] domestically and within their districts. They perform elections with limited budgets [^7], a universal service obligation [^8] and a public that expects accurate results immediately upon completion [^9].
+Voting in the U.S. in a singular endeavor. All democracies conduct elections in some fashion, but few if any face the complexity of implementation that American election administrators do. While the public conception of elections is of events that happen only every few years, in fact they occur continually in different formats. Elections are also fixed events that follow prescriptive deadlines to allow all voters to participate, and impose unique operational burdens on hiring and preparedness [^1]. US elections in particular are incredibly complex, spanning a variety of voting methods, districts, contest options, tally methods, and governing regulations as well as operational procedures and operating environments [^2]. Election administrators face asymmetric threats from geopolitical actors [^3] and heightened polarization [^4], scrutiny [^5] and threat environments [^6] domestically. They perform elections with limited budgets [^7], a universal service obligation [^8] and a public that expects accurate results immediately upon completion [^9].
 
 There is no perfect voting method that accommodates all voters and satisfies the unique security requirements of elections, either. Each method imposes tradeoffs and costs.
 
@@ -188,11 +188,9 @@ In addition, as ElectionGuard is more fully adopted across election jurisdiction
 
 ## Conclusions and Recommendations
 
-ElectionGuard has successfully integrated with multiple voting systems, and has shown the potential to increase confidence locally in election outcomes. However, in many ways it is only at the beginning of what might obtain with it.
+ElectionGuard has successfully integrated with multiple voting systems, and has shown the potential to increase confidence locally in election outcomes. However, in many ways it is only at the beginning of what it might accomplish.
 
 For example, it has only been deployed in small precinct-level elections using a single voting method or, as in the case of Enhanced Voting, as part of their Electronic Ballot Return capability.
-
-A further benefit of ElectionGuard and e2e occurs when it extends across multiple voting methods. Since some voting methods may not see much use, breaking out election results by method can undermine voting privacy.
 
 Fundamentally, and societally, though, it is critical to enable as many viable voting methods as we can. No one voting method is appropriate for all voters. Paper-based systems offer full software independence and auditability, but also present major barriers to truly independent voting for voters with limited sight, mobility, or language facility. Vote by mail is growing in popularity and certainly aids with convenience for absentee and early voting options.
 
@@ -208,9 +206,11 @@ ElectionGuard offers the ability for a new generation of electronic voting syste
 
     Practically speaking, software independence is the ability to independently verify an election and its outcome without reliance on the system that recorded the votes and generated the initial tally. Paper-based ballots are software independent because they can be recounted by hand or scanned by independent systems to verity the results obtained. ElectionGuard is software independent because it provides an independent, encrypted copy of the election and all its ballots that can be independently verified and tallied external to the recording system. 
 
+A further benefit of ElectionGuard and e2e occurs when it extends across multiple voting methods. Since some voting methods may not see much use, breaking out election results by method can undermine voting privacy.
+
 ## Acknowledgements
 
-coming soon 
+coming soon
 
 [^1]:
     Working in a polling place during an election makes for a long day. Polling places are often open for more than 12 hours a day for multiple days. On election day after the polls close, precinct-level tallying and reporting must be completed, and then the ballots and other election materials must be transported to the central election office. Early voting can encompass multiple days over weekends and weekdays, and there is often multiple sessions of training for different tasks. Finding workers who can devote that level of commitment on a temporary basis is challenging. COVID placed a huge new focus on voter and poll-worker safety for in-person voting as well as forced aggressive adoption of vote by mail.
