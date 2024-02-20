@@ -174,7 +174,7 @@ To that end, prior to our election in Preston in 2022, we did some user research
 
 Similarly, rather than try to explain the technology behind a challenge ballot with a proper label / call to action, we faux "branded" it with the term BallotCheck, indicating an innovation without specifying its nature. The intent was not to hide information, but enable layers of inquiry (bite --> snack --> meal) appropriate to a voter's interest. It is just as important not to overwhelm and overcomplicate the voter's conception of the ElectionGuard "feature", either. The fact that it blended into the background and wasn't seen as a separate "thing" was a feature, not a bug [^36].
 
-### The Importance of Independent Third-Party Verifiers
+### The Importance of Third-Party Verifiers
 
 The last two ElectionGuard elections had the benefit of an independent verifier developed by the MITRE Corporation to validate the election record, as well as a confirmation code lookup site hosted by Enhanced Voting.
 
