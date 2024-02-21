@@ -258,7 +258,7 @@ coming soon
     When the ElectionGuard program was first announced the security focus on elections was the external threat of international actors attempting to alter the results or sow doubt about the integrity of the elections via remote infiltration of online systems (see for example: [The real security threat to the 2018 midterm elections is low voter confidence](https://www.brookings.edu/articles/the-real-security-threat-to-the-2018-midterm-elections-is-low-voter-confidence/)). Those threats continue today, and in accelerated fashion with new technologies as well as a more established hacking and ransomware infrastructure.
 
 [^4]:
-    polarization
+    Eric Loepp, 2022. [Political Polarization in America: A Historical Analysis](https://dividedwefall.org/political-polarization-in-america-past-and-present/?gad_source=1)
 
 [^5]:
     Many election administrations face intense (and unwarranted) scrutiny from local activist organizations. Tarrant County, Texas, home to Fort Worth and one of the largest election jurisdictions in the US, faced over 1,000 Freedom of Information Act  foo requests on the provenance of ballots and election procedures as questions were raised about the conduct of elections in 2020. See [Tarrant County conservatives push questions about Texas election integrity](https://www.texastribune.org/2022/08/04/texas-election-integrity-tarrant/)
